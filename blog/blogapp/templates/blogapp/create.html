@@ -1,0 +1,20 @@
+{% include "blogapp/base.html" %}
+<h2 style="padding-bottom: 50px; max-width: 600px; margin: 0 auto">Crea tu Post</h2>
+
+<form action="createpost/" method="post" style="max-width: 600px; margin: 0 auto">
+  {% csrf_token %}
+
+  <div class="form-group">
+    <input type="text" id="title" name="title" class="form-control" placeholder="Título" required="required" autofocus="">
+  </div>
+
+  <div class="form-group">
+    <textarea class="form-control" id="content" name="content" rows="4" placeholder="Contenido" required="required"></textarea>
+  </div>
+
+  <div class="form-group">
+    <input class="form-control" type="text" name="imageurl" id="imageurl" placeholder="Imagen (URL)" required="required">
+  </div>
+
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Crear Post</button>
+</form>
